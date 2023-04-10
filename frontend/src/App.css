@@ -1,0 +1,43 @@
+.card {
+  width: 250px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+label {
+  color: tomato;
+  width: max-content;
+  font-size: 13px;
+  border-bottom: 0.5px solid tomato;
+  margin: 3px 0;
+}
+
+h4.place{
+  font-size: 15px;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+.desc {
+  font-size: 13px;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+}
+
+.stars {
+  margin: 0.5em 0 0 0;
+}
+.star {
+  color: gold;
+}
+
+.username {
+  font-size: 14px;
+}
+
+.date {
+  font-size: 12px;
+}
+
