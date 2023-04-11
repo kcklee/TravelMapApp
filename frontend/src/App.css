@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 label {
@@ -26,19 +27,12 @@ h4.place{
   margin-block-end: 0.5em;
 }
 
-.stars {
-  margin: 0.5em 0 0 0;
-}
-.star {
-  color: gold;
-}
-
 .username {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .date {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 form {
@@ -67,6 +61,7 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 textarea {

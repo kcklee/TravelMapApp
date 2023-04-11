@@ -53,7 +53,6 @@ function App() {
     }
   };
 
-
   useEffect(() => {
     const getPins = async () => {
       try {
@@ -97,7 +96,7 @@ function App() {
         <div className = "card">
           <label>City</label>
           <h4 className="place">{p.title}</h4>
-          <label>Highlights</label>
+          <label>Notes</label>
           <p className = "desc">{p.desc}</p>
           <label>Year</label>
           <span className="year">{p.year}</span>
@@ -130,9 +129,9 @@ function App() {
                     autoFocus
                     onChange={(e) => setTitle(e.target.value)}
                   />
-                  <label>Highlights</label>
+                  <label>Notes</label>
                   <textarea
-                    placeholder="Enter highlights of the trip"
+                    placeholder="Enter your notes"
                     onChange={(e) => setDesc(e.target.value)}
                   />
                   <label>Year</label>
