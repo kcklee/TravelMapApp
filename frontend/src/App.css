@@ -15,7 +15,7 @@ label {
   margin: 3px 0;
 }
 
-h4.place{
+h4.place {
   font-size: 15px;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
@@ -25,6 +25,14 @@ h4.place{
   font-size: 13px;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
+}
+
+.year {
+  font-size: 13px;
+}
+
+.trip {
+  font-size: 13px;
 }
 
 .username {
@@ -44,8 +52,6 @@ form {
   color: rgb(88, 87, 87);
 }
 
-
-
 input {
   border: none;
 }
@@ -54,18 +60,19 @@ input::placeholder,
 textarea::placeholder {
   font-size: 12px;
   color: rgb(185, 184, 184);
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 textarea {
   border: none;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .submitButton {
@@ -76,4 +83,3 @@ textarea {
   background-color: tomato;
   cursor: pointer;
 }
-
