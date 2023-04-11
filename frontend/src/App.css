@@ -50,15 +50,17 @@ form {
   color: rgb(88, 87, 87);
 }
 
+
+
 input {
   border: none;
-  border-bottom: 1px solid gray;
 }
 
 input::placeholder,
 textarea::placeholder {
   font-size: 12px;
   color: rgb(185, 184, 184);
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 input:focus,
@@ -69,7 +71,6 @@ select:focus {
 
 textarea {
   border: none;
-  border-bottom: 1px solid gray;
 }
 
 .submitButton {

@@ -17,6 +17,16 @@ const PinSchema = new mongoose.Schema({
         max: 5,   
     },
 
+    year: {
+        type: Number,
+        require: false,
+    },
+
+    haveVisited: {
+        type: Boolean,
+        require:true,
+    },
+
     lat: {
         type: Number,
         require: true,

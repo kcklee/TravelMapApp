@@ -16,6 +16,8 @@ function App() {
   const [title, setTitle] = useState(null);
   const [desc, setDesc] = useState(null);
   const [star, setStar] = useState(0);
+  const [year, setYear] = useState(null);
+  const [haveVisited, setHaveVisited] = useState(false);
 
   const handleMarkerClick = (id) => {
     setCurrentPlaceId(id);;
@@ -36,6 +38,8 @@ function App() {
       title,
       desc,
       rating: star,
+      year,
+      haveVisited,
       lat: newPlace.lat,
       long: newPlace.long,
     };
@@ -77,7 +81,8 @@ function App() {
         <NavigationControl position="top-left" />
       {pins.map( p => (
           <>
-          <Marker 
+          <Marker
+            color= { p.haveVisited ? '#006600' : '#0066CC'}
             longitude = {p.long}
             latitude = {p.lat}
             onClick={() => handleMarkerClick(p._id)}/>
@@ -90,18 +95,12 @@ function App() {
           closeOnClick = {false}
           onClose={() => setCurrentPlaceId(null)}>
         <div className = "card">
-          <label>Place</label>
+          <label>City</label>
           <h4 className="place">{p.title}</h4>
-          <label>Review</label>
+          <label>Highlights</label>
           <p className = "desc">{p.desc}</p>
-          <label>Rating</label>
-            <div className="stars">
-              <Star className="star"></Star>
-              <Star className="star"></Star>
-              <Star className="star"></Star>
-              <Star className="star"></Star>
-              <Star className="star"></Star>
-            </div>
+          <label>Year</label>
+          <span className="year">{p.year}</span>
           <label>Information</label>
           <span className="username">Created by <b> {p.username}</b></span>
           <span className="date">{format(p.createdAt)}</span>
@@ -125,25 +124,29 @@ function App() {
             >
               <div>
                 <form onSubmit={handleSubmit}>
-                  <label>Title</label>
+                  <label>City</label>
                   <input
-                    placeholder="Enter a title"
+                    placeholder="Enter a city"
                     autoFocus
                     onChange={(e) => setTitle(e.target.value)}
                   />
-                  <label>Description</label>
+                  <label>Highlights</label>
                   <textarea
-                    placeholder="Say us something about this place."
+                    placeholder="Enter highlights of the trip"
                     onChange={(e) => setDesc(e.target.value)}
                   />
-                  <label>Rating</label>
-                  <select onChange={(e) => setStar(e.target.value)}>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
+                  <label>Year</label>
+                  <input
+                    placeholder="Enter the year"
+                    autoFocus
+                    onChange={(e) => setYear(e.target.value)}
+                  />
+                  <label>Visited</label>
+                  <input
+                    placeholder="true/false"
+                    autoFocus
+                    onChange={(e) => setHaveVisited(e.target.value)}
+                  />
                   <button type="submit" className="submitButton">
                     Add Pin
                   </button>
