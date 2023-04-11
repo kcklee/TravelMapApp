@@ -7,10 +7,16 @@ import 'maplibre-gl/dist/maplibre-gl.css';
 import './App.css';
 import {Star} from "@mui/icons-material";
 import axios from 'axios';
+import {format} from 'timeago.js';
 
 function App() {
   const [pins, setPins] = useState([]);
-  const [showPopup, setShowPopup] = React.useState(true);
+  // const [showPopup, setShowPopup] = React.useState(true);
+  const [currentPlaceId, setCurrentPlaceId] = useState(null);
+
+  const handleMarkerClick = (id) => {
+    setCurrentPlaceId(id);;
+  };
 
   useEffect(() => {
     const getPins = async () => {
@@ -38,13 +44,18 @@ function App() {
         <NavigationControl position="top-left" />
         {pins.map( p => (
           <>
-        <Marker longitude = {p.long}
-        latitude = {p.lat}/>
-    {showPopup && (
+        <Marker 
+        longitude = {p.long}
+        latitude = {p.lat}
+        onClick={() => handleMarkerClick(p._id)}/>
+
+    {p._id === currentPlaceId && (
       <Popup 
         longitude={p.long} latitude={p.lat}
         anchor="top"
-        onClose={() => setShowPopup(false)}>
+        closeButton = {true}
+        closeOnClick = {false}
+        onClose={() => setCurrentPlaceId(null)}>
         <div className = "card">
           <label>Place</label>
           <h4 className="place">{p.title}</h4>
@@ -60,7 +71,7 @@ function App() {
             </div>
           <label>Information</label>
           <span className="username">Created by <b> {p.username}</b></span>
-          <span className="date">1 hour ago</span>
+          <span className="date">{format(p.createdAt)}</span>
         </div>
       </Popup>)}</>
         ))}
