@@ -19,4 +19,4 @@ My travel map application lets a user keep track of all the places they have tra
 
 ## Tech Stack 
 
-MongoDB, Express React, Node.js, 
+MongoDB, Express, React, Node.js, 
